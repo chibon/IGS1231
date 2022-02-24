@@ -3,13 +3,13 @@
 <head>
 <title>Virtual Lab Spherometer12214747 AKYLOVA ADINAI_(아디나이)</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<body >
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
 <center><h4>Virtual Lab Spherometer12214747 AKYLOVA ADINAI_(아디나이)</h4></center>	<input type="button" onclick="javascript:display_Q0();" value="Q-1" /> &emsp;
 	<input type="button" onclick="javascript:display_Q1();" value="Q-2" /> &emsp;
 	<input type="button" onclick="javascript:display_Q2();" value="Q-3" /> &emsp;
 	<input type="button" onclick="javascript:display_Q3();" value="Q-4" /> &emsp;
 	<input type="button" onclick="javascript:display_Q4();" value="Q-5" /> &emsp;
-&#8592; Click one on the left. &nbsp; <input type="button" id="pauseBtn" value="help" onclick="displayHelp();"> <a href="https://www.si.edu/spotlight/spherometers">Spherometer</a><br>
+&#8592; Click one on the left. &nbsp; <input type="button" id="pauseBtn" value="help" onclick="displayHelp();"> <a href="https://www.si.edu/spotlight/spherometers" target="_blank">Spherometer</a><br>
 Sample: <select id="sample">
   <option value="curved">Curved</option>
   <option value="plain">Plain</option>
@@ -27,9 +27,9 @@ q.innerHTML = '<font size="3px"> <p style="background-color: #eee;">1. Read the 
 var sample = document.getElementById("sample");
 sample.value="plain";
 sample.setAttribute("disabled",true);
-document.getElementById("meterD").value=24.7;
+document.getElementById("meterD").value=27.5;
 document.getElementById("meterD").setAttribute("disabled", true);
-layout([159, 556, 123.5, 73]);
+layout([157, 668, 137.5, 76]);
 }
 
 function display_Q1() {
@@ -39,7 +39,7 @@ sample.value="curved";
 sample.removeAttribute("disabled");
 document.getElementById("meterD").value=27.7;
 document.getElementById("meterD").setAttribute("disabled", true);
-layout([167, 628, 138.5, 78]);
+layout([110, 485, 138.5, 85]);
 }
 
 function display_Q2() {
@@ -47,9 +47,9 @@ q.innerHTML = '<font size="3px"> <p style="background-color: #eee;">3. Find the 
 var sample = document.getElementById("sample");
 sample.value="curved";
 sample.removeAttribute("disabled");
-document.getElementById("meterD").value=24.9;
+document.getElementById("meterD").value=24.5;
 document.getElementById("meterD").setAttribute("disabled", true);
-values=[170, 658, 124.5, 77];
+values=[185, 724, 122.5, 81];
 values[1] *= -1;
 layout(values);
 }
@@ -59,9 +59,9 @@ q.innerHTML = '<font size="3px"> <p style="background-color: #eee;">4. Find the 
 var sample = document.getElementById("sample");
 sample.value="curved";
 sample.removeAttribute("disabled");
-document.getElementById("meterD").value=25.7;
+document.getElementById("meterD").value=24.3;
 document.getElementById("meterD").setAttribute("disabled", true);
-layout([161, 887, 128.5, 73]);
+layout([112, 782, 121.5, 84]);
 }
 
 function display_Q4() {
@@ -69,14 +69,16 @@ q.innerHTML = '<font size="3px"> <p style="background-color: #eee;">5. Find the 
 var sample = document.getElementById("sample");
 sample.value="curved";
 sample.removeAttribute("disabled");
-document.getElementById("meterD").value=25.1;
+document.getElementById("meterD").value=27.1;
 document.getElementById("meterD").setAttribute("disabled", true);
-values=[177, 451, 125.5, 76];
+values=[187, 935, 135.5, 84];
 values[1] *= -1;
 layout(values);
 }
 
 var canvasImage;
+ctx.canvas.width=window.innerWidth-20; ctx.canvas.height=Math.max(window.innerHeight-130, 750);
+cw=cnvs.width, ch=cnvs.height
 var ccX=parseInt(cw/2), ccY=300, dialG=321, meterD=120.5, meterH=90, curvR=-600;
 var dialHandLength = 190, dragging=false, mouseX=0, limitY=0;
 
@@ -249,11 +251,28 @@ function layout(iValues) {
   dragging=false;
  }
 
+ cnvs.ontouchend = function(e) {
+  e.preventDefault();
+  dragging=false;
+ }
+
  cnvs.onmousedown = function(e) {
   e.preventDefault();
   var bbox = cnvs.getBoundingClientRect();
   var pxX=e.clientX-bbox.left*(cw/bbox.width);
   var pxY=e.clientY-bbox.top*(ch/bbox.height);
+  
+  if (ccX-100 < pxX && pxX < ccX+100 && 30 < pxY && pxY < 100) {
+   dragging=true;
+   mouseX=pxX;
+  }
+ }
+
+ cnvs.ontouchstart = function(e) {
+  e.preventDefault();
+  var bbox = cnvs.getBoundingClientRect();
+  var pxX=e.touches[0].clientX-bbox.left*(cw/bbox.width);
+  var pxY=e.touches[0].clientY-bbox.top*(ch/bbox.height);
   
   if (ccX-100 < pxX && pxX < ccX+100 && 30 < pxY && pxY < 100) {
    dragging=true;
@@ -274,16 +293,29 @@ function layout(iValues) {
   }
  }
 
+ cnvs.ontouchmove = function(e) {
+  e.preventDefault();
+  var bbox = cnvs.getBoundingClientRect();
+  var pxX=e.touches[0].clientX-bbox.left*(cw/bbox.width);
+  var pxY=e.touches[0].clientY-bbox.top*(ch/bbox.height);
+
+  if (dragging == true && ccX-100 < pxX && pxX < ccX+100 && 30 < pxY && pxY < 100 && (dialG+pxX-mouseX)/10 <= limitY) {
+   dialG += (pxX-mouseX);
+   drawAll();
+   mouseX = pxX;
+  }
+ }
+
  drawScales(); 
  drawAll();
 
 
- ctx.beginPath();
- ctx.fillStyle="black";
- ctx.textAlign="left";
- ctx.font="normal 20px Palatino Linotype";
- var sag=iValues[1]-Math.sqrt(iValues[1]**2-iValues[2]**2*4/3);
- ctx.fillText(iValues+", "+limitY.toFixed(1)+", sag:"+sag.toFixed(1), 10, 20);
+ //ctx.beginPath();
+ //ctx.fillStyle="black";
+ //ctx.textAlign="left";
+ //ctx.font="normal 20px Palatino Linotype";
+ //var sag=iValues[1]-Math.sqrt(iValues[1]**2-iValues[2]**2*4/3);
+ //ctx.fillText(iValues+", "+limitY.toFixed(1)+", sag:"+sag.toFixed(1), 10, 20);
 }
 
 
