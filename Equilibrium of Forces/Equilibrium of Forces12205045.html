@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Virtual Lab Equilibrium of Forces12205045 김충언</title>
+<title>Virtual Lab Equilibrium Of Forces12205045 김충언</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
-<center><h4>Virtual Lab Equilibrium of Forces12205045 김충언</h4></center>	<input type="button" onclick="javascript:display_Q0();" value="Q-1" /> &emsp;
+<center><h4>Virtual Lab Equilibrium Of Forces12205045 김충언</h4></center>	<input type="button" onclick="javascript:display_Q0();" value="Q-1" /> &emsp;
 	<input type="button" onclick="javascript:display_Q1();" value="Q-2" /> &emsp;
 	<input type="button" onclick="javascript:display_Q2();" value="Q-3" /> &emsp;
 &#8592; Select one button on the left. <input type="button" id="pauseBtn" value="help" onclick="displayHelp();"> <a href="https://physics.unc.edu/wp-content/uploads/sites/218/2013/05/10-Equilibrium-of-Forces.pdf" target="_blank">Equilibrium of forces acting at a point</a><br>
@@ -27,7 +27,7 @@ var q = document.getElementById("Qs");
 function display_Q0() {
 q.innerHTML = '<font size="3px"> <p style="background-color: #eee;">1. Find the correct force and the corresponding angle of <font color="blue">blue</font> weight to balance the three weights. The net force must be zero in 2 decimal point places. </p>';
 var f1 = document.getElementById("F1");
-f1.setAttribute("value",18);
+f1.setAttribute("value",16);
 f1.setAttribute("disabled",true);
 var f2 = document.getElementById("F2");
 f2.setAttribute("value",21);
@@ -35,7 +35,7 @@ f2.setAttribute("disabled",true);
 var f3 = document.getElementById("F3");
 f3.setAttribute("value",22);
 f3.removeAttribute("disabled");
-angles=[28, 150, 261];
+angles=[34, 151, 273];
 shapes=[];
 shapes.push( {x:300, y:300, radius:0, color:'red', move:false} );
 shapes.push( {x:0, y:300, radius:0, color:'green', move:false} );
@@ -46,15 +46,15 @@ layout(angles, shapes);
 function display_Q1() {
 q.innerHTML = '<font size="3px"> <p style="background-color: #eee;">2. Find the angles of <font color="red">red</font> and <font color="blue">blue</font> weights to balance the three weights fixed at their forces. The net force must be zero in 2 decimal point places. </p>';
 var f1 = document.getElementById("F1");
-f1.setAttribute("value",10);
+f1.setAttribute("value",13);
 f1.setAttribute("disabled",true);
 var f2 = document.getElementById("F2");
-f2.setAttribute("value",11);
+f2.setAttribute("value",18);
 f2.setAttribute("disabled", true);
 var f3 = document.getElementById("F3");
-f3.setAttribute("value",19);
+f3.setAttribute("value",21);
 f3.setAttribute("disabled", true);
-angles=[44, 161, 279];
+angles=[32, 150, 270];
 shapes=[];
 shapes.push( {x:0, y:0, radius:0, color:'red', move:true} );
 shapes.push( {x:0, y:0, radius:0, color:'green', move:false} );
@@ -65,15 +65,15 @@ layout(angles, shapes);
 function display_Q2() {
 q.innerHTML = '<font size="3px"> <p style="background-color: #eee;">3. Find the correct forces of <font color="red">red</font> and <font color="blue">blue</font> weights to balance the three weights fixed at their angles. The net force must be zero in 2 decimal point places. </p>';
 var f1 = document.getElementById("F1");
-f1.setAttribute("value",15);
+f1.setAttribute("value",11);
 f1.removeAttribute("disabled");
 var f2 = document.getElementById("F2");
-f2.setAttribute("value",21);
+f2.setAttribute("value",12);
 f2.setAttribute("disabled",true);
 var f3 = document.getElementById("F3");
-f3.setAttribute("value",24);
+f3.setAttribute("value",17);
 f3.removeAttribute("disabled");
-angles=[40, 157, 281];
+angles=[38, 151, 268];
 shapes=[];
 shapes.push( {x:0, y:0, radius:0, color:'red', move:false} );
 shapes.push( {x:0, y:0, radius:0, color:'green', move:false} );
