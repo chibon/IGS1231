@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Virtual Lab Free fall and Projectile motion12211107 김나영</title>
+<title>Virtual Lab Projectile motion12224064 이수정</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
-<center><h4>Virtual Lab Free fall and Projectile motion12211107 김나영</h4></center>	<input type="button" onclick="javascript:display_Q0();" value="Q-1" /> &emsp;
+<center><h4>Virtual Lab Projectile motion12224064 이수정</h4></center>	<input type="button" onclick="javascript:display_Q0();" value="Q-1" /> &emsp;
 	<input type="button" onclick="javascript:display_Q1();" value="Q-2" /> &emsp;
 	<input type="button" onclick="javascript:display_Q2();" value="Q-3" /> &emsp;
 	<input type="button" onclick="javascript:display_Q3();" value="Q-4" /> &emsp;
@@ -30,71 +30,71 @@ var q = document.getElementById("Qs");
 function display_Q0() {
 q.innerHTML = '<font size="3px"> <p style="background-color: #eee;">1. Find the time the shell hit the ground (y = 0). </p>';
 document.getElementById("power").value="OFF";
-document.getElementById("height").setAttribute("value",180);
+document.getElementById("height").setAttribute("value",190);
 document.getElementById("height").setAttribute("disabled",true);
 document.getElementById("angle").setAttribute("value",0);
 document.getElementById("angle").setAttribute("disabled",true);
-document.getElementById("Vo").setAttribute("value",600);
+document.getElementById("Vo").setAttribute("value",450);
 document.getElementById("Vo").setAttribute("disabled",true);
 document.getElementById("target").value="none";
 document.getElementById("target").setAttribute("disabled",true);
-layout([180, 25, 600, [1010, 10]]);
+layout([190, 34, 450, [920, 10]]);
 }
 
 function display_Q1() {
 q.innerHTML = '<font size="3px"> <p style="background-color: #eee;">2. Find the time the shell hit the ground (y = 0). </p>';
 document.getElementById("power").value="OFF";
-document.getElementById("height").setAttribute("value",200);
+document.getElementById("height").setAttribute("value",260);
 document.getElementById("height").setAttribute("disabled",true);
-document.getElementById("angle").setAttribute("value",19);
-document.getElementById("angle").setAttribute("disabled",true);
-document.getElementById("Vo").setAttribute("value",300);
-document.getElementById("Vo").setAttribute("disabled",true);
-document.getElementById("target").value="none";
-document.getElementById("target").setAttribute("disabled",true);
-layout([200, 19, 300, [1080, 45]]);
-}
-
-function display_Q2() {
-q.innerHTML = '<font size="3px"> <p style="background-color: #eee;">3. Find the time and the horizontal distance when the shell reaches to the maximum height. </p>';
-document.getElementById("power").value="OFF";
-document.getElementById("height").setAttribute("value",120);
-document.getElementById("height").setAttribute("disabled",true);
-document.getElementById("angle").setAttribute("value",6);
+document.getElementById("angle").setAttribute("value",44);
 document.getElementById("angle").setAttribute("disabled",true);
 document.getElementById("Vo").setAttribute("value",550);
 document.getElementById("Vo").setAttribute("disabled",true);
 document.getElementById("target").value="none";
 document.getElementById("target").setAttribute("disabled",true);
-layout([120, 6, 550, [1060, 35]]);
+layout([260, 44, 550, [940, 5]]);
+}
+
+function display_Q2() {
+q.innerHTML = '<font size="3px"> <p style="background-color: #eee;">3. Find the time and the horizontal distance when the shell reaches to the maximum height. </p>';
+document.getElementById("power").value="OFF";
+document.getElementById("height").setAttribute("value",220);
+document.getElementById("height").setAttribute("disabled",true);
+document.getElementById("angle").setAttribute("value",25);
+document.getElementById("angle").setAttribute("disabled",true);
+document.getElementById("Vo").setAttribute("value",450);
+document.getElementById("Vo").setAttribute("disabled",true);
+document.getElementById("target").value="none";
+document.getElementById("target").setAttribute("disabled",true);
+layout([220, 25, 450, [920, 20]]);
 }
 
 function display_Q3() {
 q.innerHTML = '<font size="3px"> <p style="background-color: #eee;">4. Use the regression to find the gravitational constant g and compare it with 9.8 m/s<sup>2</sup>. </p>';
 document.getElementById("power").value="OFF";
-document.getElementById("height").setAttribute("value",100);
+document.getElementById("height").setAttribute("value",220);
 document.getElementById("height").setAttribute("disabled",true);
-document.getElementById("angle").setAttribute("value",17);
+document.getElementById("angle").setAttribute("value",42);
 document.getElementById("angle").setAttribute("disabled", true);
-document.getElementById("Vo").setAttribute("value",650);
+document.getElementById("Vo").setAttribute("value",750);
 document.getElementById("Vo").setAttribute("disabled",true);
 document.getElementById("target").value="none";
 document.getElementById("target").setAttribute("disabled",true);
-layout([100, 17, 650, [960, 20]]);
+layout([220, 42, 750, [980, 30]]);
 }
 
 function display_Q4() {
 q.innerHTML = '<font size="3px"> <p style="background-color: #eee;">5. Find the V<sub>o</sub> to hit the bucket. </p>';
 document.getElementById("power").value="OFF";
-document.getElementById("height").setAttribute("value",220);
+document.getElementById("height").setAttribute("value",150);
 document.getElementById("height").setAttribute("disabled",true);
-document.getElementById("angle").setAttribute("value",22);
+document.getElementById("angle").setAttribute("value",19);
 document.getElementById("angle").setAttribute("disabled", true);
-document.getElementById("Vo").setAttribute("value",650);
+document.getElementById("Vo").setAttribute("value",550);
 document.getElementById("Vo").removeAttribute("disabled");
 document.getElementById("target").value="bucket";
 document.getElementById("target").setAttribute("disabled",true);
-layout([220, 22, 650, [1040, 20]]);
+layout([150, 19, 550, [930, 35]]);
 }
 
 var canvasImage;
