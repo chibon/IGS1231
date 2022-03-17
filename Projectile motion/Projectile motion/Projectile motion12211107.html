@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Virtual Lab Projectile_motion12220526 강경일</title>
+<title>Virtual Lab Projectile motion12211107 김나영</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
-<center><h4>Virtual Lab Projectile_motion12220526 강경일</h4></center>	<input type="button" onclick="javascript:display_Q0();" value="Q-1" /> &emsp;
+<center><h4>Virtual Lab Projectile motion12211107 김나영</h4></center>	<input type="button" onclick="javascript:display_Q0();" value="Q-1" /> &emsp;
 	<input type="button" onclick="javascript:display_Q1();" value="Q-2" /> &emsp;
 	<input type="button" onclick="javascript:display_Q2();" value="Q-3" /> &emsp;
 	<input type="button" onclick="javascript:display_Q3();" value="Q-4" /> &emsp;
 	<input type="button" onclick="javascript:display_Q4();" value="Q-5" /> &emsp;
-&#8592; Click one on the left. &nbsp; <input type="button" id="pauseBtn" value="help" onclick="displayHelp();"> <a href="https://courses.lumenlearning.com/physics/chapter/3-4-projectile-mo target="_blank"tion/">Projectile motion of a fired cannon shell</a><br>
+&#8592; Click one on the left. &nbsp; <input type="button" id="pauseBtn" value="help" onclick="displayHelp();"> <a href="https://courses.lumenlearning.com/physics/chapter/3-4-projectile-mo target="_blank"tion/">Projectile motion of a fired cannon shell</a>&emsp;
+<a href="https://brython.info/tests/editor.html?lang=en" target="_blank">Brython</a><br>
 Height (cm):<input type="number" id="height" value=30 STYLE="font-size:18px;" min=10 max=900>
 Angle (&#176;):<input type="number" id="angle" value=0 STYLE="font-size:18px;" min=0 max=89>
 V<sub>o</sub> (cm/s):<input type="number" id="Vo" value=500 STYLE="font-size:18px;" min=0 max=2000>
@@ -29,76 +30,78 @@ var q = document.getElementById("Qs");
 function display_Q0() {
 q.innerHTML = '<font size="3px"> <p style="background-color: #eee;">1. Find the time the shell hit the ground (y = 0). </p>';
 document.getElementById("power").value="OFF";
-document.getElementById("height").setAttribute("value",120);
+document.getElementById("height").setAttribute("value",220);
 document.getElementById("height").setAttribute("disabled",true);
 document.getElementById("angle").setAttribute("value",0);
-document.getElementById("angle").setAttribute("disabled",true);
-document.getElementById("Vo").setAttribute("value",700);
-document.getElementById("Vo").setAttribute("disabled",true);
-document.getElementById("target").value="none";
-document.getElementById("target").setAttribute("disabled",true);
-layout([120, 11, 700, [1040, 30]]);
-}
-
-function display_Q1() {
-q.innerHTML = '<font size="3px"> <p style="background-color: #eee;">2. Find the time the shell hit the ground (y = 0). </p>';
-document.getElementById("power").value="OFF";
-document.getElementById("height").setAttribute("value",130);
-document.getElementById("height").setAttribute("disabled",true);
-document.getElementById("angle").setAttribute("value",30);
-document.getElementById("angle").setAttribute("disabled",true);
-document.getElementById("Vo").setAttribute("value",350);
-document.getElementById("Vo").setAttribute("disabled",true);
-document.getElementById("target").value="none";
-document.getElementById("target").setAttribute("disabled",true);
-layout([130, 30, 350, [1030, 20]]);
-}
-
-function display_Q2() {
-q.innerHTML = '<font size="3px"> <p style="background-color: #eee;">3. Find the time and the horizontal distance when the shell reaches to the maximum height. </p>';
-document.getElementById("power").value="OFF";
-document.getElementById("height").setAttribute("value",150);
-document.getElementById("height").setAttribute("disabled",true);
-document.getElementById("angle").setAttribute("value",15);
 document.getElementById("angle").setAttribute("disabled",true);
 document.getElementById("Vo").setAttribute("value",650);
 document.getElementById("Vo").setAttribute("disabled",true);
 document.getElementById("target").value="none";
 document.getElementById("target").setAttribute("disabled",true);
-layout([150, 15, 650, [1030, 30]]);
+layout([220, 13, 650, [1020, 15]]);
+}
+
+function display_Q1() {
+q.innerHTML = '<font size="3px"> <p style="background-color: #eee;">2. Find the time the shell hit the ground (y = 0). </p>';
+document.getElementById("power").value="OFF";
+document.getElementById("height").setAttribute("value",180);
+document.getElementById("height").setAttribute("disabled",true);
+document.getElementById("angle").setAttribute("value",38);
+document.getElementById("angle").setAttribute("disabled",true);
+document.getElementById("Vo").setAttribute("value",600);
+document.getElementById("Vo").setAttribute("disabled",true);
+document.getElementById("target").value="none";
+document.getElementById("target").setAttribute("disabled",true);
+layout([180, 38, 600, [910, 40]]);
+}
+
+function display_Q2() {
+q.innerHTML = '<font size="3px"> <p style="background-color: #eee;">3. Find the time and the horizontal distance when the shell reaches to the maximum height. </p>';
+document.getElementById("power").value="OFF";
+document.getElementById("height").setAttribute("value",280);
+document.getElementById("height").setAttribute("disabled",true);
+document.getElementById("angle").setAttribute("value",10);
+document.getElementById("angle").setAttribute("disabled",true);
+document.getElementById("Vo").setAttribute("value",750);
+document.getElementById("Vo").setAttribute("disabled",true);
+document.getElementById("target").value="none";
+document.getElementById("target").setAttribute("disabled",true);
+layout([280, 10, 750, [960, 5]]);
 }
 
 function display_Q3() {
 q.innerHTML = '<font size="3px"> <p style="background-color: #eee;">4. Use the regression to find the gravitational constant g and compare it with 9.8 m/s<sup>2</sup>. </p>';
 document.getElementById("power").value="OFF";
-document.getElementById("height").setAttribute("value",120);
+document.getElementById("height").setAttribute("value",280);
 document.getElementById("height").setAttribute("disabled",true);
-document.getElementById("angle").setAttribute("value",15);
+document.getElementById("angle").setAttribute("value",10);
 document.getElementById("angle").setAttribute("disabled", true);
-document.getElementById("Vo").setAttribute("value",300);
+document.getElementById("Vo").setAttribute("value",750);
 document.getElementById("Vo").setAttribute("disabled",true);
 document.getElementById("target").value="none";
 document.getElementById("target").setAttribute("disabled",true);
-layout([120, 15, 300, [970, 10]]);
+layout([280, 10, 750, [1030, 45]]);
 }
 
 function display_Q4() {
 q.innerHTML = '<font size="3px"> <p style="background-color: #eee;">5. Find the V<sub>o</sub> to hit the bucket. </p>';
 document.getElementById("power").value="OFF";
-document.getElementById("height").setAttribute("value",110);
+document.getElementById("height").setAttribute("value",280);
 document.getElementById("height").setAttribute("disabled",true);
-document.getElementById("angle").setAttribute("value",38);
+document.getElementById("angle").setAttribute("value",33);
 document.getElementById("angle").setAttribute("disabled", true);
 document.getElementById("Vo").setAttribute("value",300);
 document.getElementById("Vo").removeAttribute("disabled");
 document.getElementById("target").value="bucket";
 document.getElementById("target").setAttribute("disabled",true);
-layout([110, 38, 300, [1020, 45]]);
+layout([280, 33, 300, [970, 15]]);
 }
 
 var canvasImage;
-var ccX=140.5, ccY=700.5, target;
-
+ctx.canvas.height=Math.min(window.innerHeight-130, 650);
+ch=ctx.canvas.height
+var ccX=140.5, ccY=ch-100.5, target;
+ch=cnvs.height
 drawScales();
 
 drawAll(0,0);
@@ -157,7 +160,6 @@ function drawScales() {
  ctx.textAlign="right";
  ctx.fillText("(m)", 130, 15);
  ctx.fillText("(m)", ccX+65, ccY+13);
-
 
  canvasImage=ctx.getImageData(0,0,cw,ch);
 }
